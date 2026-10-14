@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SneakySpot ২০ প্রশ্ন</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1e3a8a;--purple:#3b0764;--yellow:#facc15;--red:#ef4444;--green:#10b981;--cyan:#06b6d4;
+  --violet:#8b5cf6;--orange:#f97316;--pink:#ec4899;--black:#000;--white:#fff;
+  color-scheme:dark;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;min-height:100vh;font-family:'Hind Siliguri',sans-serif;font-weight:700;color:var(--white);
+  background-color:var(--blue);
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:40px 40px;overflow-x:hidden;line-height:1.5}
+::-webkit-scrollbar{width:12px}::-webkit-scrollbar-thumb{background:var(--yellow);border:2px solid #000;border-radius:8px}
+.bg-graphic{position:fixed;opacity:.15;pointer-events:none;z-index:0}
+.bg1{top:6%;left:-40px;width:200px;height:200px;border-radius:50%;background:var(--cyan);border:6px solid #000;display:grid;place-items:center;font-size:96px;color:#000;transform:rotate(-12deg)}
+.bg2{bottom:5%;right:-30px;width:210px;height:210px;background:var(--pink);border:6px solid #000;display:grid;place-items:center;text-align:center;font-size:34px;line-height:1.1;padding:18px;color:#000;transform:rotate(9deg)}
+.bg3{top:48%;right:6%;width:90px;height:90px;background:var(--yellow);border:5px solid #000;transform:rotate(30deg);border-radius:20px}
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+.wrap{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:20px 14px 40px}
+.panel-main{background:linear-gradient(135deg,#1e3a8a 0%,#3b0764 100%);border-radius:1.25rem;padding:16px 18px 24px;display:flex;flex-direction:column;gap:14px}
+.comic{border:4px solid #000;box-shadow:6px 6px 0 0 #000}
+.center{display:flex;justify-content:center}
+.topbar{display:flex;justify-content:space-between;align-items:center;min-height:40px}
+.qcount{font-size:1.1rem;color:var(--yellow)}
+.icon-btn{width:44px;height:44px;border:3px solid #000;border-radius:12px;background:#fff;font-size:1.3rem;cursor:pointer;box-shadow:3px 3px 0 #000}
+.icon-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #000}
+.dots{display:grid;grid-template-columns:repeat(20,1fr);gap:3px}
+.dots i{height:10px;border:2px solid #000;border-radius:3px;display:block}
+.title{margin:0;text-align:center;font-size:clamp(3rem,15vw,4.6rem);line-height:1.05;color:var(--yellow);
+  -webkit-text-stroke:2px #000;paint-order:stroke fill;text-shadow:4px 4px 0 var(--red);letter-spacing:.01em}
+.title.sm{font-size:clamp(2rem,9vw,2.8rem);text-shadow:3px 3px 0 var(--red)}
+.lead{margin:0;text-align:center;font-size:1.15rem;font-weight:600}
+.lead b{color:var(--yellow)}
+.small{margin:0;text-align:center;font-size:.9rem;font-weight:600;opacity:.9}
+.small.ok{color:var(--yellow);min-height:1.4em}
+.stats{opacity:.7}
+.card{border:3px solid #000;box-shadow:5px 5px 0 #000;border-radius:1rem;padding:12px 16px;font-weight:600;color:#000}
+.card b{font-weight:700}
+.prize{background:var(--pink)}.prize .hl{background:var(--yellow);padding:0 8px;border:2px solid #000;border-radius:8px;font-weight:700}
+.rules{background:var(--yellow)}.rules ol{margin:6px 0 0;padding-left:1.3em}.rules li{margin:4px 0}
+.rot-l{transform:rotate(-1deg)}.rot-r{transform:rotate(1deg)}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;position:relative;font:inherit;font-weight:700;font-size:1.15rem;color:#000;text-decoration:none;
+  border:3px solid #000;border-radius:.9rem;padding:14px 12px;cursor:pointer;box-shadow:6px 6px 0 0 #000;transition:filter .1s;background:#fff}
+.btn:hover:not(:disabled){filter:brightness(1.08)}
+.btn:active:not(:disabled){transform:translate(4px,4px);box-shadow:2px 2px 0 0 #000}
+.btn:disabled{opacity:.55;cursor:default}
+.btn:focus-visible,.icon-btn:focus-visible,.btn-link:focus-visible,input:focus-visible{outline:4px solid #fff;outline-offset:3px}
+.btn.big{font-size:1.4rem;padding:18px 14px}
+.btn-yellow{background:var(--yellow)}.btn-green{background:var(--green)}.btn-red{background:var(--red)}
+.btn-violet{background:var(--violet)}.btn-orange{background:var(--orange)}.btn-cyan{background:var(--cyan)}
+.btn .k{position:absolute;left:10px;top:6px;font-size:.75rem;opacity:.6}
+.btn-link{background:none;border:0;color:#fff;font:inherit;font-weight:600;text-decoration:underline;cursor:pointer;padding:8px;align-self:center}
+.btn-link:disabled{opacity:.3;cursor:default}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;padding-right:4px}
+.answers.two{grid-template-columns:1fr}
+@media(min-width:480px){.answers.two{grid-template-columns:1fr 1fr}}
+.qcard{min-height:130px;display:grid;place-items:center;text-align:center;border-radius:1rem;padding:18px;color:#000;font-size:clamp(1.35rem,5.4vw,1.8rem);line-height:1.35;transform:rotate(var(--tilt,1deg))}
+.slide{animation:slideInRight .35s ease-out}
+@keyframes slideInRight{from{transform:translateX(120%) rotate(8deg);opacity:0}to{transform:translateX(0) rotate(var(--tilt,1deg));opacity:1}}
+.guessbox{background:var(--yellow);color:#000;text-align:center;border-radius:1rem;padding:22px 12px;font-size:clamp(2rem,10vw,3rem);line-height:1.15}
+.codebox{background:var(--yellow);color:#000;border-radius:1rem;padding:14px;text-align:center;display:flex;flex-direction:column}
+.codebox small{font-weight:600}.codebox strong{font-family:'Bangers',cursive;font-weight:400;font-size:2.4rem;letter-spacing:.08em}
+.pulse{animation:pulseGentle 2s ease-in-out infinite}
+@keyframes pulseGentle{0%,100%{scale:1}50%{scale:1.05}}
+.field{display:flex;flex-direction:column;gap:6px;font-size:1rem}
+.field input{font:inherit;font-weight:700;font-size:1.2rem;padding:12px 14px;border:3px solid #000;border-radius:.8rem;box-shadow:4px 4px 0 #000;background:#fff;color:#000}
+.err{margin:0;min-height:1.4em;color:var(--yellow);text-align:center;font-weight:700}
+/* ball */
+.ball{filter:drop-shadow(5px 6px 0 rgba(0,0,0,.6))}
+.ball .m{display:none}.ball.idle .m-idle,.ball.happy .m-happy,.ball.sad .m-sad,.ball.think .m-think,.ball.shock .m-shock{display:block}
+.ball .pupils{transition:transform .25s}
+.ball.think{animation:wobble .5s ease-in-out infinite}.ball.think .pupils{animation:look .8s linear infinite}
+.ball.happy{animation:hop .6s ease-in-out infinite}.ball.shock{animation:shake .25s linear 4}
+.ball.sad .pupils{transform:translateY(6px)}
+@keyframes wobble{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+@keyframes look{0%{transform:translate(-6px,0)}25%{transform:translate(0,-6px)}50%{transform:translate(6px,0)}75%{transform:translate(0,5px)}100%{transform:translate(-6px,0)}}
+@keyframes hop{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.badge{position:relative;z-index:1;display:block;width:max-content;margin:18px auto 0;background:#fff;color:#000;border:2px solid #000;border-radius:999px;padding:4px 14px;transform:rotate(-2deg);font-size:.85rem;font-weight:600}
+.badge b{font-family:'Bangers',cursive;font-weight:400;font-size:1.1rem;letter-spacing:.05em}
+@media(prefers-reduced-motion:reduce){.pulse,.ball,.ball .pupils,.slide{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="bg-graphic bg1" aria-hidden="true">চা</div>
+<div class="bg-graphic bg2" aria-hidden="true">বিপদ এখানেই</div>
+<div class="bg-graphic bg3" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<main class="wrap">
+  <div id="app"></div>
+  <span class="badge">Powered by <b>SneakySpot</b></span>
+</main>
+<script>
+/* ===== SneakySpot 20 Questions — engine =====
+   20Q-style: a probability matrix P[object][question] (chance the answer is "yes"),
+   Bayesian update on every answer, next question chosen by information gain,
+   and the matrix LEARNS from every finished game. Nothing is a fixed decision tree. */
+
+const CFG = {
+  TOTAL_Q: 20,
+  GUESS_LIMIT: 3,          // wrong guesses the ball may make before the player wins
+  EARLY_GUESS_P: 0.62,     // confidence needed to guess before question 20
+  MIN_Q_FOR_GUESS: 6,
+  GAP_AFTER_WRONG: 2,      // questions to ask before guessing again
+  LEARN_RATE: 0.12,
+  CHEAT_RATIO: 0.4,        // share of contradicting answers that voids a prize
+  PRIZE_TEXT: 'SneakySpot-এর বিশেষ পুরস্কার',
+  WHATSAPP: '',            // e.g. '8801XXXXXXXXX' — winners get a button to message this number
+  ONE_PRIZE_PER_DEVICE: true,
+  KB_KEY: 'ss20q_kb_v1',
+  STATS_KEY: 'ss20q_stats_v1',
+  CLAIM_KEY: 'ss20q_claim_v1',
+  MUTE_KEY: 'ss20q_muted'
+};
+
+const QS = [
+  ['liv','এটা কি জীবন্ত কিছু (প্রাণী বা গাছপালা)?'],
+  ['ani','এটা কি কোনো প্রাণী?'],
+  ['plt','এটা কি গাছ, ফুল, ফল বা সবজি?'],
+  ['eat','এটা কি খাওয়া বা পান করা যায়?'],
+  ['mad','এটা কি মানুষের তৈরি জিনিস?'],
+  ['plc','এটা কি কোনো জায়গা বা স্থাপনা?'],
+  ['hum','এটা কি কোনো মানুষ বা পেশা?'],
+  ['nat','এটা কি প্রকৃতিতে এমনিতেই পাওয়া যায়?'],
+  ['hom','এটা কি সাধারণত বাড়ির ভেতরে পাওয়া যায়?'],
+  ['out','এটা কি সাধারণত বাড়ির বাইরে দেখা যায়?'],
+  ['big','এটা কি একজন মানুষের চেয়ে বড়?'],
+  ['sml','এটা কি এক হাতের মুঠোয় ধরে যায়?'],
+  ['mov','এটা কি নিজে নিজে নড়াচড়া করতে বা চলতে পারে?'],
+  ['whl','এটার কি চাকা আছে?'],
+  ['ele','এটা চালাতে কি বিদ্যুৎ বা ব্যাটারি লাগে?'],
+  ['scr','এটাতে কি স্ক্রিন আছে?'],
+  ['snd','এটা কি শব্দ করে?'],
+  ['fly','এটা কি উড়তে পারে?'],
+  ['wtr','এটা কি পানিতে থাকে বা পানির সাথে সম্পর্কিত?'],
+  ['leg4','এটার কি চারটা পা আছে?'],
+  ['tal','এটার কি লেজ আছে?'],
+  ['pet','মানুষ কি এটাকে পোষে বা ঘরে রাখে?'],
+  ['dng','এটা কি মানুষের জন্য বিপজ্জনক হতে পারে?'],
+  ['swt','এটা কি মিষ্টি?'],
+  ['spy','এটা কি ঝাল বা মশলাদার?'],
+  ['ric','এটা কি ভাতের সাথে খাওয়া হয়?'],
+  ['frt','এটা কি ফল?'],
+  ['veg','এটা কি সবজি?'],
+  ['liq','এটা কি তরল?'],
+  ['hot','এটা কি গরম অবস্থায় খাওয়া বা ব্যবহার করা হয়?'],
+  ['cld','এটা কি ঠান্ডা থাকলে ভালো লাগে?'],
+  ['kit','এটা কি রান্নাঘরে পাওয়া যায়?'],
+  ['bed','এটা কি শোবার ঘরে পাওয়া যায়?'],
+  ['stu','পড়াশোনার কাজে কি এটা লাগে?'],
+  ['wear','এটা কি পরা যায়?'],
+  ['spt','এটা কি খেলাধুলা বা মজার কাজে ব্যবহার হয়?'],
+  ['met','এটা কি মূলত ধাতুর তৈরি?'],
+  ['wod','এটা কি মূলত কাঠের তৈরি?'],
+  ['pls','এটা কি মূলত প্লাস্টিকের তৈরি?'],
+  ['gls','এটা কি মূলত কাচের তৈরি?'],
+  ['clo','এটা কি মূলত কাপড়ের তৈরি?'],
+  ['cmn','বাংলাদেশে কি এটা খুব সহজে দেখা যায়?'],
+  ['exp','এটার দাম কি ১০ হাজার টাকার বেশি হতে পারে?'],
+  ['txt','এতে কি লেখা বা সংখ্যা থাকে?'],
+  ['opn','এটা কি খোলা আর বন্ধ করা যায়?'],
+  ['shp','এটা কি ধারালো?'],
+  ['red','এটা কি সাধারণত লাল রঙের?'],
+  ['grn','এটা কি সাধারণত সবুজ রঙের?'],
+  ['yel','এটা কি সাধারণত হলুদ রঙের?'],
+  ['blk','এটা কি সাধারণত কালো রঙের?'],
+  ['wht','এটা কি সাধারণত সাদা রঙের?'],
+  ['bd','এটা কি বাংলাদেশের বিশেষ কোনো প্রতীক বা গর্বের জিনিস?'],
+  ['sce','এটার কি আলাদা কোনো গন্ধ আছে?'],
+  ['sky','এটা কি আকাশে দেখা যায়?'],
+  ['fes','ঈদ, পূজা বা বৈশাখের মতো উৎসবের সাথে কি এটার সম্পর্ক আছে?'],
+  ['mus','এটা কি গান-বাজনার সাথে সম্পর্কিত?'],
+  ['trn','এটা দিয়ে কি এক জায়গা থেকে আরেক জায়গায় যাওয়া যায়?'],
+  ['mea','এটা কি মাংস বা মাছ জাতীয় খাবার?'],
+  ['hlt','এটা কি স্বাস্থ্য বা চিকিৎসার সাথে সম্পর্কিত?'],
+  ['sit','এটাতে কি বসা বা শোয়া যায়?'],
+  ['cln','এটা কি পরিষ্কার-পরিচ্ছন্নতার কাজে লাগে?'],
+  ['lgt','এটা কি আলো দেয়?'],
+  ['mny','কেনাবেচা বা টাকার লেনদেনের সাথে কি এটার সম্পর্ক আছে?']
+];
+
+/* seed knowledge: "name|traits" — a leading ~ means "sometimes / partly". Everything else is a soft "no". */
+const SEED = `
+বাঘ|liv ani nat leg4 tal dng mov snd out bd yel blk ~big
+গরু|liv ani leg4 tal mov snd out cmn pet fes blk wht ~big ~eat ~mea
+ছাগল|liv ani leg4 tal mov snd out cmn pet fes wht blk ~eat ~mea
+বিড়াল|liv ani leg4 tal mov snd pet hom cmn wht blk ~out
+কুকুর|liv ani leg4 tal mov snd pet cmn out blk wht ~hom ~dng
+হাতি|liv ani nat leg4 tal mov snd big dng out blk ~fes
+বানর|liv ani nat leg4 tal mov snd out ~pet ~cmn
+হরিণ|liv ani nat leg4 tal mov out ~big
+ইলিশ|liv ani eat mea wtr tal cmn bd ric fes wht hot kit sce ~spy
+চিংড়ি|liv ani eat mea wtr tal cmn ric hot kit sce ~red ~spy ~fes
+কাক|liv ani fly nat out tal snd cmn blk sml sky
+কবুতর|liv ani fly out snd pet cmn wht tal sky ~sml
+টিয়া পাখি|liv ani fly pet snd grn tal nat hom sky ~sml
+মুরগি|liv ani eat mea hom out snd pet tal cmn red wht ric hot kit
+কুমির|liv ani wtr nat leg4 tal dng mov grn big out
+সাপ|liv ani nat dng mov out tal grn ~wtr ~sml
+মশা|liv ani fly snd dng sml cmn blk hom out
+পিঁপড়া|liv ani sml mov cmn dng hom out blk red ~swt
+প্রজাপতি|liv ani fly nat sml out sky red yel ~hom
+ডলফিন|liv ani wtr nat snd mov tal wht ~big
+আম|plt eat frt swt cmn sml yel grn nat sce cld ~bd
+কাঁঠাল|plt eat frt swt bd grn yel sce cmn nat
+কলা|plt eat frt swt yel cmn grn sml
+নারকেল|plt eat frt liq wht nat cmn fes ~swt ~grn
+আপেল|plt eat frt swt red grn sml cmn hlt ~cld
+তরমুজ|plt eat frt swt red grn cld cmn ~liq
+পেঁপে|plt eat frt swt yel grn cmn ~veg ~hlt
+লেবু|plt eat frt grn yel sml cmn kit sce ~liq
+আলু|plt eat veg kit cmn ric hot sml wht ~yel
+পেঁয়াজ|plt eat veg kit cmn ric hot sml red sce ~spy
+বেগুন|plt eat veg kit cmn ric hot ~blk
+মরিচ|plt eat veg spy red grn kit cmn sml ric hot
+টমেটো|plt eat red kit cmn sml ~veg ~frt
+ধান|plt eat nat cmn bd ric out yel grn
+পাট|plt nat out cmn bd yel grn ~clo
+শাপলা|plt nat wtr wht bd out sce cmn
+গোলাপ|plt nat out red sce sml cmn fes ~mny
+বটগাছ|liv plt nat out big grn cmn
+ভাত|eat hot kit cmn wht ric hom
+ডাল|eat liq hot kit cmn yel ric ~spy
+বিরিয়ানি|eat mea hot spy fes ric yel cmn sce
+খিচুড়ি|eat hot ric yel fes cmn kit ~spy
+সিঙ্গারা|eat hot spy yel cmn sml fes ~veg
+রসগোল্লা|eat swt wht sml fes cmn cld
+মিষ্টি দই|eat swt cld wht cmn fes bd ~liq
+চা|eat liq hot cmn sce kit hom ~swt ~bd
+কফি|eat liq hot sce blk cmn ~swt
+দুধ|eat liq wht cmn kit hlt ~cld ~hot ~swt
+পানি|liq eat nat cmn kit hom hlt cld ~wtr
+আইসক্রিম|eat swt cld sml cmn wht
+ডিম|eat hot kit cmn wht sml ric ~mea
+পরোটা|eat hot kit cmn yel ~spy
+পিঠা|eat swt hot fes cmn wht bd ~sml
+পিৎজা|eat hot mea red yel cmn ~spy
+চকলেট|eat swt blk sml cmn
+আচার|eat spy red kit cmn ric sce ~swt
+মধু|eat swt liq yel nat hlt cmn ~sce
+মোবাইল ফোন|mad ele scr sml snd hom out cmn txt gls met pls blk mny mus ~exp
+ল্যাপটপ|mad ele scr hom stu txt opn exp met pls blk cmn ~mus
+টিভি|mad ele scr hom snd mus big gls exp blk cmn ~bed
+ফ্যান|mad ele hom bed snd met cmn wht ~pls
+ফ্রিজ|mad ele hom kit cld opn exp met wht cmn ~big
+রাইস কুকার|mad ele hom kit hot cmn ric met ~wht
+কলম|mad stu txt sml pls cmn hom blk ~opn
+বই|mad stu txt hom cmn opn wht ~sml
+খাতা|mad stu txt hom cmn opn wht ~sml
+স্কুল ব্যাগ|mad stu clo hom cmn opn blk ~wear
+ছাতা|mad opn out cmn clo met blk ~sml ~wtr
+জুতা|mad wear hom cmn out blk ~pls
+শার্ট|mad wear clo hom cmn wht ~opn
+শাড়ি|mad wear clo cmn red fes bd
+ঘড়ি|mad wear sml txt ele met cmn hom ~snd ~exp
+চশমা|mad wear sml gls cmn hom opn blk
+চেয়ার|mad sit hom wod cmn leg4 ~met ~pls
+টেবিল|mad hom wod leg4 cmn stu ~met
+খাট|mad sit bed wod hom cmn leg4 big
+বালিশ|mad bed clo wht hom cmn sit ~sml
+আয়না|mad gls hom bed cmn ~opn
+চাবি|mad met sml hom cmn ~opn ~shp
+ছুরি|mad met shp kit sml hom cmn dng
+কাঁচি|mad met shp sml hom stu cmn opn dng
+চামচ|mad met kit sml hom cmn hot ~eat
+থালা|mad kit hom cmn met wht ~pls
+গ্লাস|mad gls kit hom cmn liq ~pls ~sml
+হাঁড়ি|mad kit met hot cmn blk hom
+বাল্ব|mad ele lgt hom gls cmn sml wht
+মোমবাতি|mad lgt wht sml hom cmn fes hot ~sce
+সাবান|mad cln hom wht cmn sml sce
+সাইকেল|mad whl trn out met cmn spt ~mov
+রিকশা|mad whl trn out cmn bd met red yel snd mny ~big
+বাস|mad whl trn out big cmn snd met mny red yel
+ট্রেন|mad whl trn out big cmn snd met mny ~dng
+নৌকা|mad wtr trn out cmn wod bd mny ~big
+লঞ্চ|mad wtr trn big out bd cmn snd met mny wht
+বিমান|mad fly trn big sky snd met exp wht
+মোটরসাইকেল|mad whl trn out snd cmn exp met blk red ~dng
+প্রাইভেট কার|mad whl trn snd exp met cmn out ~big
+ক্রিকেট ব্যাট|mad spt wod out cmn ~big
+ফুটবল|mad spt out cmn wht blk ~sml
+ক্যারম বোর্ড|mad spt hom wod cmn ~big
+গিটার|mad mus snd wod hom ~exp
+ঢোল|mad mus snd fes cmn ~wod
+জাতীয় পতাকা|mad bd red grn clo out cmn fes sky
+টাকার নোট|mad txt sml cmn mny grn ~wht
+ক্যালকুলেটর|mad ele stu txt sml cmn ~scr
+ক্যামেরা|mad ele scr exp blk gls ~sml
+হেডফোন|mad ele snd sml mus wear blk cmn
+ঝাড়ু|mad cln hom cmn ~wod
+বালতি|mad pls wtr hom cmn cln ~met
+টুথব্রাশ|mad cln pls sml hom cmn
+তোয়ালে|mad clo cln hom wht cmn
+ইস্ত্রি|mad ele hom hot clo met cmn
+টর্চলাইট|mad ele lgt sml cmn pls hom ~out
+বেলুন|mad sml fes red cmn spt ~fly ~sky
+ঘুড়ি|mad fly sky spt out fes red yel cmn
+দরজা|mad hom wod opn cmn ~big ~met
+জানালা|mad hom gls opn cmn ~wod ~met
+তালা|mad met sml opn hom cmn
+ওষুধ|mad hlt eat sml wht cmn
+মসজিদ|mad plc big fes out cmn wht
+মন্দির|mad plc big fes out cmn ~mus ~snd
+স্কুল|mad plc stu big out cmn snd
+হাসপাতাল|mad plc hlt big cmn wht
+বাজার|mad plc out cmn big mny eat snd
+সংসদ ভবন|mad plc bd big exp out
+শহীদ মিনার|mad plc bd big out red fes
+কক্সবাজার সমুদ্র সৈকত|plc nat out big wtr bd ~wht
+সুন্দরবন|plc nat out big bd grn wtr dng
+ডাক্তার|hum hlt wht cmn
+শিক্ষক|hum stu txt cmn
+রিকশাচালক|hum out trn cmn mny
+কৃষক|hum out cmn bd ~plt ~wtr
+পুলিশ|hum out cmn dng ~blk ~grn
+সূর্য|nat sky lgt hot big yel red out
+চাঁদ|nat sky lgt wht fes ~big
+মেঘ|nat sky wht wtr ~blk
+বৃষ্টি|nat sky wtr liq snd cmn out
+নদী|nat wtr big out bd cmn liq ~mov
+পাহাড়|nat big out grn
+তারা|nat sky lgt wht yel
+আগুন|nat lgt hot red yel dng snd ~mad
+বরফ|nat cld wht wtr ~sml
+`;
+
+const QIDX = Object.fromEntries(QS.map((q, i) => [q[0], i]));
+const clamp = (p) => Math.min(0.96, Math.max(0.04, p));
+const H = (p) => (p <= 0 || p >= 1) ? 0 : -(p * Math.log2(p) + (1 - p) * Math.log2(1 - p));
+
+function buildSeedKB() {
+  const objs = [];
+  const bad = [];
+  SEED.trim().split('\n').forEach((line) => {
+    const [name, traits] = line.split('|');
+    const p = new Array(QS.length).fill(0.05);
+    traits.trim().split(/\s+/).forEach((t) => {
+      const soft = t[0] === '~';
+      const code = soft ? t.slice(1) : t;
+      if (!(code in QIDX)) { bad.push(name + ':' + code); return; }
+      p[QIDX[code]] = soft ? 0.5 : 0.95;
+    });
+    objs.push({ n: name.trim(), p, plays: 0 });
+  });
+  if (bad.length) throw new Error('Unknown trait codes: ' + bad.join(', '));
+  return { v: 1, nq: QS.length, objs };
+}
+
+/* posterior over objects given the answers so far. a: 'y' | 'n' | 'm' (sometimes) | 'u' (don't know) */
+function posterior(kb, hist, excl) {
+  const w = kb.objs.map((o, i) => (excl.has(i) ? 0 : 1 + Math.min(o.plays, 50) * 0.1));
+  for (const h of hist) {
+    if (h.a === 'u') continue;
+    let sum = 0;
+    for (let i = 0; i < w.length; i++) {
+      if (w[i] === 0) continue;
+      const p = clamp(kb.objs[i].p[h.q]);
+      const L = h.a === 'y' ? p : h.a === 'n' ? 1 - p : 0.35 + 0.65 * (1 - Math.abs(2 * p - 1));
+      w[i] *= L;
+      sum += w[i];
+    }
+    if (sum > 0) for (let i = 0; i < w.length; i++) w[i] /= sum;
+  }
+  const s = w.reduce((a, b) => a + b, 0);
+  if (s > 0) for (let i = 0; i < w.length; i++) w[i] /= s;
+  return w;
+}
+
+/* choose the question with the highest expected information gain (with a little randomness for variety) */
+function pickQuestion(kb, w, hist, rnd = Math.random) {
+  const asked = new Set(hist.map((h) => h.q));
+  const scored = [];
+  for (let q = 0; q < QS.length; q++) {
+    if (asked.has(q)) continue;
+    let m = 0, hb = 0;
+    for (let i = 0; i < w.length; i++) {
+      if (w[i] === 0) continue;
+      const p = clamp(kb.objs[i].p[q]);
+      m += w[i] * p;
+      hb += w[i] * H(p);
+    }
+    scored.push({ q, gain: H(m) - hb });
+  }
+  if (!scored.length) return -1;
+  scored.sort((a, b) => b.gain - a.gain);
+  const top = scored.slice(0, 3);
+  const tot = top.reduce((a, b) => a + Math.max(b.gain, 1e-6), 0);
+  let r = rnd() * tot;
+  for (const t of top) { r -= Math.max(t.gain, 1e-6); if (r <= 0) return t.q; }
+  return top[0].q;
+}
+
+function topIndex(w) {
+  let b = 0;
+  for (let i = 1; i < w.length; i++) if (w[i] > w[b]) b = i;
+  return b;
+}
+
+/* learning: nudge the object's row toward what the player answered */
+function learn(kb, idx, hist) {
+  const o = kb.objs[idx];
+  hist.forEach((h) => {
+    if (h.a === 'u') return;
+    const t = h.a === 'y' ? 1 : h.a === 'n' ? 0 : 0.5;
+    o.p[h.q] = clamp(o.p[h.q] + CFG.LEARN_RATE * (t - o.p[h.q]));
+  });
+  o.plays++;
+}
+
+function addObject(kb, name, hist) {
+  const p = new Array(QS.length).fill(0.2);
+  hist.forEach((h) => {
+    if (h.a === 'y') p[h.q] = 0.85;
+    else if (h.a === 'n') p[h.q] = 0.12;
+    else if (h.a === 'm') p[h.q] = 0.5;
+  });
+  kb.objs.push({ n: name, p, plays: 1 });
+  return kb.objs.length - 1;
+}
+
+const normName = (s) => s.replace(/\s+/g, '').toLowerCase();
+function findObject(kb, name) {
+  const n = normName(name);
+  return kb.objs.findIndex((o) => normName(o.n) === n);
+}
+
+/* does the player's story hold together for the object they claim to have thought of? */
+function consistency(kb, idx, hist) {
+  const o = kb.objs[idx];
+  let definite = 0, bad = 0;
+  hist.forEach((h) => {
+    if (h.a !== 'y' && h.a !== 'n') return;
+    definite++;
+    const p = o.p[h.q];
+    if ((h.a === 'y' && p < 0.1) || (h.a === 'n' && p > 0.9)) bad++;
+  });
+  const positives = hist.filter((h) => h.a === 'y' || h.a === 'm').length;
+  const unknowns = hist.filter((h) => h.a === 'u').length;
+  // real objects get some "yes" answers, and nobody honestly doesn't know that many things
+  const lazy = positives < 3 || unknowns > 8;
+  return { definite, bad, ratio: definite ? bad / definite : 0, lazy };
+}
+
+if (typeof module !== 'undefined') module.exports = { CFG, QS, buildSeedKB, posterior, pickQuestion, topIndex, learn, addObject, findObject, consistency };
+/* ===== SneakySpot 20 Questions — UI ===== */
+const $ = (s, r = document) => r.querySelector(s);
+const app = $('#app');
+const BN = '০১২৩৪৫৬৭৮৯';
+const toBn = (n) => String(n).replace(/\d/g, (d) => BN[d]);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* storage can be empty or blocked */ } }
+};
+
+/* ---------- knowledge base (seed + whatever the ball has learned on this device) ---------- */
+let kb = (() => {
+  const saved = store.get(CFG.KB_KEY, null);
+  if (saved && saved.v === 1 && saved.nq === QS.length && Array.isArray(saved.objs) && saved.objs.length) return saved;
+  return buildSeedKB();
+})();
+const saveKB = () => store.set(CFG.KB_KEY, kb);
+const stats = store.get(CFG.STATS_KEY, { plays: 0, ai: 0, user: 0 });
+const saveStats = () => store.set(CFG.STATS_KEY, stats);
+
+/* ---------- sound (WebAudio synth, no files) ---------- */
+let AC = null;
+let muted = store.get(CFG.MUTE_KEY, false);
+function ac() {
+  if (!AC) { const C = window.AudioContext || window.webkitAudioContext; if (!C) return null; AC = new C(); }
+  if (AC.state === 'suspended') AC.resume();
+  return AC;
+}
+function tone(f, t0, d, type = 'square', v = 0.12, f2) {
+  if (muted) return;
+  try {
+    const a = ac(); if (!a) return;
+    const o = a.createOscillator(), g = a.createGain(), t = a.currentTime + t0;
+    o.type = type;
+    o.frequency.setValueAtTime(f, t);
+    if (f2) o.frequency.exponentialRampToValueAtTime(f2, t + d);
+    g.gain.setValueAtTime(v, t);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + d);
+    o.connect(g); g.connect(a.destination);
+    o.start(t); o.stop(t + d + 0.03);
+  } catch (e) { /* audio is optional */ }
+}
+const SFX = {
+  click() { tone(520, 0, 0.06, 'square', 0.08); },
+  start() { [392, 523, 659, 784].forEach((f, i) => tone(f, i * 0.07, 0.12, 'square', 0.1)); },
+  pop() { tone(700, 0, 0.09, 'triangle', 0.12, 1100); },
+  yes() { [523, 659, 784].forEach((f, i) => tone(f, i * 0.06, 0.1, 'square', 0.1)); },
+  no() { tone(300, 0, 0.2, 'sawtooth', 0.1, 110); },
+  maybe() { [440, 392, 440].forEach((f, i) => tone(f, i * 0.07, 0.09, 'triangle', 0.14)); },
+  unk() { tone(330, 0, 0.14, 'triangle', 0.14, 260); },
+  think() { for (let i = 0; i < 5; i++) tone(350 + Math.random() * 600, i * 0.09, 0.05, 'square', 0.05); },
+  guess() { tone(180, 0, 0.8, 'sawtooth', 0.08, 900); tone(900, 0.85, 0.15, 'square', 0.1); tone(1200, 1.0, 0.25, 'square', 0.1); },
+  win() { [523, 659, 784, 1047, 784, 1047, 1319, 1568].forEach((f, i) => tone(f, i * 0.12, 0.2, 'square', 0.11)); tone(262, 0, 1.0, 'triangle', 0.1); },
+  aiWin() { [392, 370, 349, 330].forEach((f, i) => tone(f, i * 0.22, 0.28, 'sawtooth', 0.09, f * 0.93)); },
+  reject() { tone(160, 0, 0.35, 'sawtooth', 0.12); tone(120, 0.15, 0.4, 'sawtooth', 0.12); },
+  coin() { tone(988, 0, 0.08, 'square', 0.1); tone(1319, 0.08, 0.3, 'square', 0.1); }
+};
+
+/* ---------- confetti ---------- */
+let confettiRaf = 0;
+function confetti() {
+  const cv = $('#confetti'); if (!cv) return;
+  const ctx = cv.getContext('2d');
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const W = (cv.width = innerWidth * dpr), Hh = (cv.height = innerHeight * dpr);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const colors = ['#facc15', '#ef4444', '#10b981', '#06b6d4', '#8b5cf6', '#f97316', '#ec4899', '#ffffff'];
+  const N = reduce ? 80 : 260;
+  const ps = [];
+  for (let i = 0; i < N; i++) {
+    const side = i % 3; // 0 left cannon, 1 right cannon, 2 rain from top
+    const ang = side === 0 ? -Math.PI / 3 + (Math.random() - 0.5) * 0.7 : side === 1 ? (-2 * Math.PI) / 3 + (Math.random() - 0.5) * 0.7 : Math.PI / 2;
+    const sp = side === 2 ? 2 + Math.random() * 3 : 14 + Math.random() * 14;
+    ps.push({
+      x: (side === 0 ? 0 : side === 1 ? W : Math.random() * W),
+      y: (side === 2 ? -Math.random() * Hh * 0.4 : Hh),
+      vx: Math.cos(ang) * sp * dpr * (side === 2 ? (Math.random() - 0.5) : 1),
+      vy: Math.sin(ang) * sp * dpr,
+      s: (6 + Math.random() * 8) * dpr,
+      r: Math.random() * 6.28, vr: (Math.random() - 0.5) * 0.4,
+      c: colors[(Math.random() * colors.length) | 0],
+      sh: Math.random() < 0.3 ? 'c' : 'r',
+      life: 0
+    });
+  }
+  cancelAnimationFrame(confettiRaf);
+  const t0 = performance.now();
+  (function frame(t) {
+    ctx.clearRect(0, 0, W, Hh);
+    let alive = 0;
+    ps.forEach((p) => {
+      p.vy += 0.38 * dpr; p.vx *= 0.99; p.vy *= 0.992;
+      p.x += p.vx; p.y += p.vy; p.r += p.vr; p.life++;
+      if (p.y < Hh + 40 && p.x > -40 && p.x < W + 40) alive++;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r); ctx.fillStyle = p.c;
+      ctx.strokeStyle = '#000'; ctx.lineWidth = dpr;
+      if (p.sh === 'c') { ctx.beginPath(); ctx.arc(0, 0, p.s / 2, 0, 6.28); ctx.fill(); ctx.stroke(); }
+      else { ctx.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); ctx.strokeRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); }
+      ctx.restore();
+    });
+    if (alive > 0 && t - t0 < 9000) confettiRaf = requestAnimationFrame(frame);
+    else ctx.clearRect(0, 0, W, Hh);
+  })(t0);
+}
+
+/* ---------- the ball ---------- */
+function ballHTML(mood = 'idle', size = 190) {
+  return `<div class="ball ${mood}" id="ball" style="width:${size}px;height:${size}px" aria-hidden="true">
+  <svg viewBox="0 0 200 200" width="100%" height="100%">
+    <circle cx="100" cy="100" r="92" fill="#facc15" stroke="#000" stroke-width="7"/>
+    <path d="M38 70 Q50 34 88 24" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".55"/>
+    <g class="eyes">
+      <ellipse cx="68" cy="86" rx="21" ry="25" fill="#fff" stroke="#000" stroke-width="5"/>
+      <ellipse cx="132" cy="86" rx="21" ry="25" fill="#fff" stroke="#000" stroke-width="5"/>
+      <g class="pupils"><circle cx="70" cy="90" r="9" fill="#000"/><circle cx="130" cy="90" r="9" fill="#000"/></g>
+    </g>
+    <path class="m m-idle" d="M66 126 Q100 152 134 126" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+    <path class="m m-happy" d="M58 120 Q100 180 142 120 Z" fill="#000" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+    <path class="m m-sad" d="M70 144 Q100 114 130 144" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+    <path class="m m-think" d="M80 136 H122" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+    <ellipse class="m m-shock" cx="100" cy="138" rx="13" ry="17" fill="#000"/>
+    <g transform="translate(100 176)"><rect x="-27" y="-17" width="54" height="26" rx="13" fill="#ef4444" stroke="#000" stroke-width="4"/><text y="3" text-anchor="middle" font-size="19" font-weight="700" fill="#fff" font-family="Hind Siliguri,sans-serif">২০</text></g>
+  </svg></div>`;
+}
+function setBall(mood) { const b = $('#ball'); if (b) b.className = 'ball ' + mood; }
+
+/* ---------- game state ---------- */
+const S = { hist: [], excl: new Set(), guesses: 0, lastGuessAt: -9, q: -1, phase: 'start', busy: false, lastGuessIdx: -1, bonus: null };
+const ANS = { y: ['হ্যাঁ', 'yes'], n: ['না', 'no'], m: ['কখনো কখনো', 'maybe'], u: ['জানি না', 'unk'] };
+const DOT = { y: '#10b981', n: '#ef4444', m: '#f97316', u: '#8b5cf6' };
+
+function headerBar(showQ) {
+  const dots = Array.from({ length: CFG.TOTAL_Q }, (_, i) => {
+    const h = S.hist[i];
+    return `<i style="background:${h ? DOT[h.a] : 'rgba(255,255,255,.18)'}"></i>`;
+  }).join('');
+  return `<div class="topbar">
+    <div class="qcount">${showQ ? `প্রশ্ন ${toBn(Math.min(S.hist.length + 1, CFG.TOTAL_Q))}/${toBn(CFG.TOTAL_Q)}` : ''}</div>
+    <button class="icon-btn" id="mute" aria-label="${muted ? 'শব্দ চালু করো' : 'শব্দ বন্ধ করো'}">${muted ? '🔇' : '🔊'}</button>
+  </div>${showQ ? `<div class="dots" aria-hidden="true">${dots}</div>` : ''}`;
+}
+function bindMute() {
+  const m = $('#mute'); if (!m) return;
+  m.onclick = () => { muted = !muted; store.set(CFG.MUTE_KEY, muted); m.textContent = muted ? '🔇' : '🔊'; if (!muted) SFX.click(); };
+}
+function screen(html, cls = '') {
+  app.innerHTML = `<section class="panel-main comic ${cls}">${html}</section>`;
+  bindMute();
+  window.scrollTo({ top: 0 });
+}
+
+/* ---------- start ---------- */
+function renderStart() {
+  S.phase = 'start';
+  const claim = store.get(CFG.CLAIM_KEY, null);
+  screen(`
+    ${headerBar(false)}
+    <div class="center">${ballHTML('idle', 170)}</div>
+    <h1 class="title">২০ প্রশ্ন</h1>
+    <p class="lead">মনে মনে যেকোনো কিছু ভাবো। আমি ${toBn(CFG.TOTAL_Q)}টা প্রশ্নে ধরে ফেলব!</p>
+    <div class="card prize rot-l"><b>🎁 পুরস্কার</b><br>বল যদি ধরতে না পারে, তুমি জিতবে: <span class="hl">${esc(CFG.PRIZE_TEXT)}</span></div>
+    <div class="card rules rot-r">
+      <b>নিয়ম</b>
+      <ol>
+        <li>মনে মনে একটা জিনিস ঠিক করো: প্রাণী, ফল, খাবার, যানবাহন, ঘরের জিনিস, জায়গা বা প্রকৃতির কিছু।</li>
+        <li>সত্যি উত্তর দাও। উত্তর মিলছে না মনে হলে পুরস্কার বাতিল।</li>
+        <li>বল ${toBn(CFG.GUESS_LIMIT)}বার অনুমান করতে পারবে।</li>
+        <li>জিতলে তোমার ভাবা জিনিসটার নাম বলতে হবে, তারপর পুরস্কারের কোড পাবে।</li>
+      </ol>
+    </div>
+    <button class="btn btn-yellow big pulse" id="go">খেলা শুরু করো!</button>
+    ${claim && CFG.ONE_PRIZE_PER_DEVICE ? `<p class="small">এই ডিভাইস থেকে পুরস্কার নেওয়া হয়েছে (কোড: <b>${esc(claim.code)}</b>)</p>` : ''}
+    <p class="small stats">তুমি ${toBn(stats.plays)}বার খেলেছ · বল জিতেছে ${toBn(stats.ai)}বার · তুমি জিতেছ ${toBn(stats.user)}বার</p>
+  `, 'start');
+  $('#go').onclick = () => { SFX.start(); newGame(); };
+}
+
+/* ---------- game loop ---------- */
+function newGame() {
+  S.hist = []; S.excl = new Set(); S.guesses = 0; S.lastGuessAt = -9; S.q = -1; S.busy = false;
+  nextStep(true);
+}
+
+function nextStep(first) {
+  const w = posterior(kb, S.hist, S.excl);
+  const total = w.reduce((a, b) => a + b, 0);
+  if (total <= 0) return userBeatsBall();
+  const top = topIndex(w);
+  const n = S.hist.length;
+  const early = n >= CFG.MIN_Q_FOR_GUESS && w[top] >= CFG.EARLY_GUESS_P && n - S.lastGuessAt >= CFG.GAP_AFTER_WRONG && n < CFG.TOTAL_Q;
+  if (early || n >= CFG.TOTAL_Q) {
+    if (S.guesses >= CFG.GUESS_LIMIT) return userBeatsBall();
+    return renderGuess(top);
+  }
+  const q = pickQuestion(kb, w, S.hist);
+  if (q < 0) return S.guesses >= CFG.GUESS_LIMIT ? userBeatsBall() : renderGuess(top);
+  renderQuestion(q, first);
+}
+
+function renderQuestion(q, first) {
+  S.phase = 'ask'; S.q = q; S.busy = false;
+  const tilt = (Math.random() * 2 - 1).toFixed(2);
+  const bg = ['#06b6d4', '#06b6d4', '#ec4899', '#8b5cf6'][S.hist.length % 4];
+  screen(`
+    ${headerBar(true)}
+    <div class="center">${ballHTML('idle', 120)}</div>
+    <div class="qcard comic slide" style="--tilt:${tilt}deg;background:${bg}"><span>${esc(QS[q][1])}</span></div>
+    <div class="answers">
+      <button class="btn btn-green" data-a="y"><span class="k">১</span>✅ হ্যাঁ</button>
+      <button class="btn btn-red" data-a="n"><span class="k">২</span>❌ না</button>
+      <button class="btn btn-violet" data-a="u"><span class="k">৩</span>🤷 জানি না</button>
+      <button class="btn btn-orange" data-a="m"><span class="k">৪</span>🤔 কখনো কখনো</button>
+    </div>
+    <button class="btn-link" id="undo" ${S.hist.length ? '' : 'disabled'}>← আগের উত্তর বদলাও</button>
+  `);
+  SFX.pop();
+  document.querySelectorAll('.answers .btn').forEach((b) => (b.onclick = () => answer(b.dataset.a)));
+  $('#undo').onclick = undo;
+}
+
+function answer(a) {
+  if (S.phase !== 'ask' || S.busy) return;
+  S.busy = true;
+  SFX[ANS[a][1]]();
+  S.hist.push({ q: S.q, a });
+  document.querySelectorAll('.answers .btn').forEach((b) => (b.disabled = true));
+  setBall('think');
+  setTimeout(SFX.think, 140);
+  setTimeout(() => nextStep(false), 650 + Math.random() * 350);
+}
+
+function undo() {
+  if (S.phase !== 'ask' || S.busy || !S.hist.length) return;
+  SFX.click();
+  S.hist.pop();
+  const w = posterior(kb, S.hist, S.excl);
+  const q = pickQuestion(kb, w, S.hist);
+  renderQuestion(q < 0 ? 0 : q, false);
+}
+
+document.addEventListener('keydown', (e) => {
+  if (S.phase !== 'ask') return;
+  const map = { 1: 'y', 2: 'n', 3: 'u', 4: 'm' };
+  if (map[e.key]) answer(map[e.key]);
+});
+
+/* ---------- ball guesses ---------- */
+function renderGuess(idx) {
+  S.phase = 'guess'; S.lastGuessIdx = idx;
+  screen(`
+    ${headerBar(false)}
+    <div class="center">${ballHTML('shock', 150)}</div>
+    <p class="lead">আমার মনে হচ্ছে তুমি ভাবছ...</p>
+    <div class="guessbox comic rot-r pulse">${esc(kb.objs[idx].n)}</div>
+    <p class="small">অনুমান ${toBn(S.guesses + 1)}/${toBn(CFG.GUESS_LIMIT)}</p>
+    <div class="answers two">
+      <button class="btn btn-green" id="right">✅ হ্যাঁ, ঠিক ধরেছ!</button>
+      <button class="btn btn-red" id="wrong">❌ না, ভুল!</button>
+    </div>
+  `);
+  SFX.guess();
+  $('#right').onclick = () => aiWins(idx);
+  $('#wrong').onclick = () => {
+    SFX.no();
+    S.guesses++; S.excl.add(idx); S.lastGuessAt = S.hist.length;
+    if (S.guesses >= CFG.GUESS_LIMIT) return userBeatsBall();
+    setBall('sad'); setTimeout(() => nextStep(false), 350);
+  };
+}
+
+function aiWins(idx) {
+  S.phase = 'done';
+  stats.plays++; stats.ai++; saveStats();
+  learn(kb, idx, S.hist); saveKB();
+  SFX.aiWin();
+  screen(`
+    ${headerBar(false)}
+    <div class="center">${ballHTML('happy', 170)}</div>
+    <h2 class="title sm">আমি জিতলাম! 😎</h2>
+    <p class="lead">${toBn(S.hist.length)}টা প্রশ্নে তোমার <b>${esc(kb.objs[idx].n)}</b> ধরে ফেলেছি। এবার অন্য কিছু ভাবো, দেখি পারো কিনা!</p>
+    <button class="btn btn-yellow big pulse" id="again">আবার খেলো</button>
+  `);
+  $('#again').onclick = () => { SFX.start(); newGame(); };
+}
+
+/* ---------- player beat the ball ---------- */
+function userBeatsBall() {
+  S.phase = 'reveal';
+  SFX.reject(); setTimeout(SFX.coin, 500);
+  const opts = kb.objs.map((o) => `<option value="${esc(o.n)}"></option>`).join('');
+  screen(`
+    ${headerBar(false)}
+    <div class="center">${ballHTML('sad', 150)}</div>
+    <h2 class="title sm">বল হার মানল! 🤯</h2>
+    <p class="lead">তুমি আসলে কী ভেবেছিলে? নামটা লেখো। উত্তরের সাথে মিলিয়ে দেখে পুরস্কার ঠিক হবে।</p>
+    <label class="field">তোমার ভাবা জিনিস
+      <input id="obj" list="objs" maxlength="40" autocomplete="off" placeholder="যেমন: কাঁঠাল">
+      <datalist id="objs">${opts}</datalist>
+    </label>
+    <p class="err" id="err" role="alert"></p>
+    <button class="btn btn-green big" id="verify">যাচাই করো</button>
+  `);
+  $('#obj').focus();
+  $('#verify').onclick = verify;
+  $('#obj').addEventListener('keydown', (e) => { if (e.key === 'Enter') verify(); });
+}
+
+function verify() {
+  const name = $('#obj').value.trim();
+  const err = $('#err');
+  if (name.length < 2) { err.textContent = 'জিনিসটার নাম লেখো (কমপক্ষে ২ অক্ষর)।'; SFX.no(); return; }
+  stats.plays++;
+  const idx = findObject(kb, name);
+  let status = 'review';
+  if (idx >= 0) {
+    const c = consistency(kb, idx, S.hist);
+    if (c.lazy || (c.definite >= 8 && c.ratio > CFG.CHEAT_RATIO)) { saveStats(); return rejected(name, c); }
+    status = 'verified';
+    learn(kb, idx, S.hist);
+  } else {
+    addObject(kb, name, S.hist);
+  }
+  stats.user++; saveStats(); saveKB();
+  renderWin(name, status);
+}
+
+function rejected(name, c) {
+  S.phase = 'done'; SFX.reject();
+  screen(`
+    ${headerBar(false)}
+    <div class="center">${ballHTML('think', 150)}</div>
+    <h2 class="title sm">উত্তর মিলছে না 🧐</h2>
+    <p class="lead">তুমি <b>${esc(name)}</b> বলেছ, কিন্তু ${c.lazy ? 'উত্তরগুলো এই জিনিসের সাথে মেলে না (প্রায় সবই "না" বা "জানি না")' : toBn(c.definite) + 'টা উত্তরের মধ্যে ' + toBn(c.bad) + 'টা এই জিনিসের সাথে মেলেনি'}। তাই এবার পুরস্কার দেওয়া যাচ্ছে না।</p>
+    <p class="small">সত্যি উত্তর দিয়ে আবার চেষ্টা করো!</p>
+    <button class="btn btn-yellow big" id="again">আবার খেলো</button>
+  `);
+  $('#again').onclick = () => { SFX.start(); newGame(); };
+}
+
+/* ---------- prize claim ---------- */
+function hash(s) { let h = 5381; for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0; return h; }
+function claimCode(name, phone, obj) {
+  const ts = Date.now();
+  return 'SS-' + ts.toString(36).slice(-5).toUpperCase() + '-' + hash(name + phone + obj + ts).toString(36).slice(-4).toUpperCase();
+}
+
+function renderWin(obj, status) {
+  S.phase = 'win';
+  const prev = store.get(CFG.CLAIM_KEY, null);
+  const locked = prev && CFG.ONE_PRIZE_PER_DEVICE;
+  SFX.win(); setTimeout(confetti, 60);
+  screen(`
+    ${headerBar(false)}
+    <div class="center">${ballHTML('shock', 150)}</div>
+    <h2 class="title">তুমি জিতেছ! 🎉</h2>
+    <p class="lead"><b>${esc(obj)}</b> ধরতে পারেনি বল। ${status === 'review' ? 'জিনিসটা বলের নতুন, তাই আমাদের টিম একবার দেখে নেবে।' : 'উত্তরগুলো মিলে গেছে।'}</p>
+    ${locked ? `
+      <div class="card prize rot-l">এই ডিভাইস থেকে আগেই পুরস্কার নেওয়া হয়েছে।<br>কোড: <b>${esc(prev.code)}</b></div>
+      <button class="btn btn-yellow big" id="again">আবার খেলো</button>
+    ` : `
+      <div class="card prize rot-l"><b>🎁 ${esc(CFG.PRIZE_TEXT)}</b><br>নিচে তোমার নাম আর মোবাইল নম্বর দাও, কোড পাবে।</div>
+      <label class="field">তোমার নাম<input id="nm" maxlength="40" autocomplete="name" placeholder="নাম"></label>
+      <label class="field">মোবাইল নম্বর<input id="ph" inputmode="tel" maxlength="16" autocomplete="tel" placeholder="01XXXXXXXXX"></label>
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn btn-yellow big pulse" id="claim">পুরস্কারের কোড নাও</button>
+    `}
+  `);
+  if (locked) { $('#again').onclick = () => { SFX.start(); newGame(); }; return; }
+  $('#claim').onclick = () => {
+    const nm = $('#nm').value.trim();
+    const ph = $('#ph').value.replace(/[\s-]/g, '').replace(/^\+?88/, '');
+    const err = $('#err');
+    if (nm.length < 2) { err.textContent = 'নাম লেখো।'; SFX.no(); return; }
+    if (!/^01[3-9]\d{8}$/.test(ph)) { err.textContent = 'সঠিক মোবাইল নম্বর দাও (যেমন 01712345678)।'; SFX.no(); return; }
+    const code = claimCode(nm, ph, obj);
+    const rec = { code, name: nm, phone: ph, obj, status, ts: Date.now() };
+    store.set(CFG.CLAIM_KEY, rec);
+    renderClaimed(rec);
+  };
+}
+
+function renderClaimed(rec) {
+  S.phase = 'claimed';
+  SFX.coin(); setTimeout(confetti, 100);
+  const msg = `SneakySpot ২০ প্রশ্ন: আমি জিতেছি!\nকোড: ${rec.code}\nনাম: ${rec.name}\nমোবাইল: ${rec.phone}\nভেবেছিলাম: ${rec.obj}\nযাচাই: ${rec.status === 'verified' ? 'উত্তর মিলেছে' : 'নতুন জিনিস (রিভিউ দরকার)'}`;
+  const wa = CFG.WHATSAPP ? `https://wa.me/${CFG.WHATSAPP}?text=${encodeURIComponent(msg)}` : '';
+  screen(`
+    ${headerBar(false)}
+    <div class="center">${ballHTML('happy', 130)}</div>
+    <h2 class="title sm">অভিনন্দন, ${esc(rec.name)}!</h2>
+    <div class="codebox comic rot-r"><small>তোমার পুরস্কারের কোড</small><strong>${esc(rec.code)}</strong></div>
+    <p class="lead">${wa ? 'নিচের বাটনে চাপ দিয়ে কোডটা আমাদের পাঠাও।' : 'কোডটার স্ক্রিনশট নাও আর SneakySpot-এর পেজে মেসেজ করে পাঠাও।'}</p>
+    ${wa ? `<a class="btn btn-green big" href="${wa}" target="_blank" rel="noopener">WhatsApp-এ পাঠাও</a>` : ''}
+    <button class="btn btn-cyan" id="copy">📋 বিবরণ কপি করো</button>
+    <p class="small ok" id="copied" role="status"></p>
+    <button class="btn-link" id="home">← শুরুতে ফিরে যাও</button>
+  `);
+  $('#copy').onclick = async () => {
+    SFX.click();
+    let ok = false;
+    try { await navigator.clipboard.writeText(msg); ok = true; } catch (e) {
+      try { const t = document.createElement('textarea'); t.value = msg; document.body.appendChild(t); t.select(); ok = document.execCommand('copy'); t.remove(); } catch (e2) { ok = false; }
+    }
+    $('#copied').textContent = ok ? 'কপি হয়েছে!' : 'কপি করা যায়নি। কোডটা লিখে রাখো।';
+  };
+  $('#home').onclick = renderStart;
+}
+
+addEventListener('resize', () => { /* confetti canvas is re-measured on every burst */ });
+renderStart();
+</script>
+</body>
+</html>
